@@ -1,16 +1,13 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
-
-const mnemonicPhrase =
-  "xxx";
+import { MNEMONIC_PHRASE, INFURA_ENDPOINT_RINKEBY } from "./credentials";
 
 const provider = new HDWalletProvider({
   mnemonic: {
-    phrase: mnemonicPhrase
+    phrase: MNEMONIC_PHRASE,
   },
-  providerOrUrl:
-    "https://rinkeby.infura.io/v3/yyy",
+  providerOrUrl: INFURA_ENDPOINT_RINKEBY,
 });
 
 const web3 = new Web3(provider);
@@ -24,7 +21,7 @@ const deploy = async () => {
     .deploy({ data: `0x${compiledFactory.evm.bytecode.object}` })
     .send({
       from: accounts[0],
-      gas: '5000000',
+      gas: "5000000",
     });
 
   console.log("Contract deployed to", result.options.address);

@@ -10,7 +10,7 @@ const provider = new HDWalletProvider({
     phrase: mnemonicPhrase
   },
   providerOrUrl:
-    "yyy",
+    "https://rinkeby.infura.io/v3/yyy",
 });
 
 const web3 = new Web3(provider);

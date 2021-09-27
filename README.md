@@ -11,6 +11,6 @@ export const INFURA_ENDPOINT_RINKEBY =
   "https://rinkeby.infura.io/v3/yyy";
 ```
 
-2. Run `npm run dev`
-3. Run `npm install`
+2. Run `npm install`
+3. Run `npm run dev`
 4. Go to http://localhost:3000
